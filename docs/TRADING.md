@@ -7,12 +7,12 @@
 Requires Node.js 22+, npm, a Solana mainnet-beta RPC, and a dedicated Unix account.
 
 ```bash
-git clone https://github.com/venymlabs/ratifyos.git ratifyos
-cd ratifyos
+git clone https://github.com/venymlabs/RetifyOS.git RetifyOS
+cd RetifyOS
 npm ci
 npm run verify
 umask 077
-export DATA_DIR="$HOME/.local/state/ratifyos"
+export DATA_DIR="$HOME/.local/state/RetifyOS"
 install -d -m 0700 "$DATA_DIR"
 npm run setup:trading -- --account <yourDedicatedWalletPubkey> --rpc https://YOUR_MAINNET_RPC
 ```
@@ -102,7 +102,7 @@ A transaction carrying an address lookup table is refused unless that table is p
 
 `discriminator` is the lowercase hex prefix of the instruction data (`0c` is SPL Token `TransferChecked`; `02`/`03` are ComputeBudget `SetComputeUnitLimit`/`SetComputeUnitPrice`). `mintAccountIndex` is the index within that instruction's own account list where the mint appears; the signer verifies it matches `asset` before applying the cap, and refuses if the mint is not verifiable. `caps` and `maxPriorityFeeLamports` are decimal strings of base units, `native` meaning lamports.
 
-**No program address is codified for you.** RatifyOS ships no verified-deployment inventory: the only program IDs in the tree are the SPL Token, Associated Token Account and ComputeBudget system programs, and the addresses the Drift and Meteora adapters take from their own SDKs. Every program you allow in `sign-policy.json` is an address **you** must verify against primary sources, and re-verify before funding. An address copied from this repository, a chat message, or a block explorer search result is not verified provenance.
+**No program address is codified for you.** RetifyOS ships no verified-deployment inventory: the only program IDs in the tree are the SPL Token, Associated Token Account and ComputeBudget system programs, and the addresses the Drift and Meteora adapters take from their own SDKs. Every program you allow in `sign-policy.json` is an address **you** must verify against primary sources, and re-verify before funding. An address copied from this repository, a chat message, or a block explorer search result is not verified provenance.
 
 ## 4. Configure live mode and approval proof keys
 

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "RatifyOS Control — the operator console. Built and audited independently of the server package.",
+  "description": "RetifyOS Control — the operator console. Built and audited independently of the server package.",
   "license": "MIT",
   "scripts": {
     "dev": "vite",

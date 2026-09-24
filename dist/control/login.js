@@ -17,13 +17,13 @@ export const LOGIN_HTML = `<!doctype html>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="color-scheme" content="dark" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>RatifyOS Control — sign in</title>
+    <title>RetifyOS Control — sign in</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/login.css" />
   </head>
   <body>
     <main>
-      <p class="eyebrow">RatifyOS</p>
+      <p class="eyebrow">RetifyOS</p>
       <h1>Control</h1>
       <p class="lede">
         This console can engage the kill switch and decide approvals that move

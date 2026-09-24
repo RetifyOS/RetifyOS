@@ -1,9 +1,9 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: NEW in this
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: NEW in this
  * repo — Aetheria wired the tape, the watcher and the engine together inside
- * its engine package, which RatifyOS does not have. This is that wiring, given a
+ * its engine package, which RetifyOS does not have. This is that wiring, given a
  * lifecycle the composition root can own.
  * SPDX-License-Identifier: Apache-2.0
  */

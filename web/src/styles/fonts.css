@@ -1,7 +1,7 @@
 /*
- * RatifyOS CONTROL — self-hosted typefaces.
+ * RetifyOS CONTROL — self-hosted typefaces.
  *
- * The console is served by the RatifyOS daemon itself, on operator hardware that is
+ * The console is served by the RetifyOS daemon itself, on operator hardware that is
  * often locked down or air-gapped. Nothing here may reach a third party: a font
  * fetched from a CDN leaks operator activity on every load, dies without egress,
  * and cannot sit behind `default-src 'self'`. All three families ship with the app.

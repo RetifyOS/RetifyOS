@@ -98,14 +98,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/venymlabs/ratifyos.git"
+    "url": "git+https://github.com/venymlabs/RetifyOS.git"
   },
-  "homepage": "https://github.com/venymlabs/ratifyos#readme",
+  "homepage": "https://github.com/venymlabs/RetifyOS#readme",
   "bugs": {
-    "url": "https://github.com/venymlabs/ratifyos/issues"
+    "url": "https://github.com/venymlabs/RetifyOS/issues"
   },
   "keywords": [
-    "ratifyos",
+    "RetifyOS",
     "agent",
     "autonomous",
     "infrastructure",

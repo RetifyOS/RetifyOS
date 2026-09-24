@@ -2,7 +2,7 @@
 
 Inspected upstream ElizaOS commit `12502f6aa5a0bf8885a45fd7f0beee1ab64829c5` (2026-07-11), MIT licensed.
 
-> Written while RatifyOS targeted an EVM chain. The observations about ElizaOS are
+> Written while RetifyOS targeted an EVM chain. The observations about ElizaOS are
 > unchanged and still describe that commit; the statements about *our* boundary
 > below have been restated in Solana terms.
 

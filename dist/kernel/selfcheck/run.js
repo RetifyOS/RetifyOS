@@ -3,7 +3,7 @@
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
  * See NOTICE and licenses/APACHE-2.0.txt.
  *
- * Modified for RatifyOS: the harness now returns a structured report instead of
+ * Modified for RetifyOS: the harness now returns a structured report instead of
  * only printing, so the same invariants run both as a script
  * (`node dist/kernel/selfcheck/run.js`) and inside the vitest suite
  * (`tests/kernel-invariants.test.ts`). The invariants themselves are unchanged.
@@ -388,7 +388,7 @@ function seedSentTrade(store, amount) {
 }
 /** Print the report. Kept out of {@link runSelfcheck} so the harness stays silent under vitest. */
 export function printSelfcheck(report) {
-    console.log("RatifyOS kernel selfcheck — driving the chokepoint over synthetic state\n");
+    console.log("RetifyOS kernel selfcheck — driving the chokepoint over synthetic state\n");
     for (const c of report.checks) {
         console.log(`  [${c.ok ? "PASS" : "FAIL"}] ${c.name}${c.detail ? ` — ${c.detail}` : ""}`);
     }

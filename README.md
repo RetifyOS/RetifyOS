@@ -1,6 +1,6 @@
 <div align="center">
 
-# RatifyOS
+# RetifyOS
 
 **The Operating System for Autonomous AI**
 
@@ -19,30 +19,30 @@ An infrastructure layer for autonomous AI agents: persistent memory, capability-
 <table>
 <tr><td>
 
-**Contents** — [Why RatifyOS Exists](#why-ratifyos-exists) · [Overview](#overview) · [Architecture](#architecture) · [Core Concepts](#core-concepts) · [Features](#features) · [Installation](#installation) · [Configuration](#configuration) · [Usage](#usage) · [Production Trading](#production-trading) · [Operator Console](#operator-console) · [Telegram](#telegram) · [Durable Workers](#durable-workers) · [Security Boundary](#the-security-boundary) · [Development](#development) · [Project Structure](#project-structure) · [Roadmap](#roadmap) · [Philosophy](#philosophy) · [License](#license)
+**Contents** — [Why RetifyOS Exists](#why-RetifyOS-exists) · [Overview](#overview) · [Architecture](#architecture) · [Core Concepts](#core-concepts) · [Features](#features) · [Installation](#installation) · [Configuration](#configuration) · [Usage](#usage) · [Production Trading](#production-trading) · [Operator Console](#operator-console) · [Telegram](#telegram) · [Durable Workers](#durable-workers) · [Security Boundary](#the-security-boundary) · [Development](#development) · [Project Structure](#project-structure) · [Roadmap](#roadmap) · [Philosophy](#philosophy) · [License](#license)
 
 </td></tr>
 </table>
 
-> **Important — Live trading.** RatifyOS supports funded Solana mainnet-beta execution through an isolated, policy-constrained signer. Live mode is triple-opt-in and is not safe by default: verify the build, audit the signer policy and every program ID it allows, use a dedicated minimally funded wallet, and follow the [trading runbook](docs/TRADING.md). Passing tests is not a security audit.
+> **Important — Live trading.** RetifyOS supports funded Solana mainnet-beta execution through an isolated, policy-constrained signer. Live mode is triple-opt-in and is not safe by default: verify the build, audit the signer policy and every program ID it allows, use a dedicated minimally funded wallet, and follow the [trading runbook](docs/TRADING.md). Passing tests is not a security audit.
 
 **Production quickstart:** verify the clone, run `npm run setup:trading -- --account <pubkey> --rpc <url>`, create the keystore with `npm run signer -- create`, then configure the signer, approval keys, API, and recovery loop exactly as described in the [trading runbook](docs/TRADING.md). Supported lifecycle commands include `trade quote`, `buy`/`sell`, `revoke`, `approve`/`deny`, `submit`, `status`, and `reconcile`. Delegate revokes flow through the same exact-transaction approval and isolated-signer pipeline as swaps.
 
 ---
 
-## Why RatifyOS Exists
+## Why RetifyOS Exists
 
 Most agent runtimes are a prompt wrapped around an API client. That is fine for a demo. It is a bad place to put capital, and a fragile place to put anything an agent is meant to keep doing unattended.
 
 An autonomous agent needs infrastructure it does not have to trust its own model to provide: somewhere to remember, a bounded way to act, a way to coordinate with people and other systems, a way to recover after a crash, and a way to prove what it did. If that infrastructure lives inside the model's trust domain, every prompt injection is a privilege escalation.
 
-RatifyOS is that infrastructure. It treats the model as an untrusted planner and keeps the deterministic parts — policy, persistence, simulation, approvals, signing — in the host. The result is an agent runtime that can stay online, recover after a restart, process events, and explain what it wants to do without becoming the custodian of the wallet it is meant to protect.
+RetifyOS is that infrastructure. It treats the model as an untrusted planner and keeps the deterministic parts — policy, persistence, simulation, approvals, signing — in the host. The result is an agent runtime that can stay online, recover after a restart, process events, and explain what it wants to do without becoming the custodian of the wallet it is meant to protect.
 
 ---
 
 ## Overview
 
-RatifyOS is one package with a small, explicit production dependency set. The composition root wires an application from independent stores and ports; the CLI, the HTTP server, the worker, and the Telegram runner are thin entrypoints over that same application.
+RetifyOS is one package with a small, explicit production dependency set. The composition root wires an application from independent stores and ports; the CLI, the HTTP server, the worker, and the Telegram runner are thin entrypoints over that same application.
 
 The shipped runtime provides:
 
@@ -61,12 +61,12 @@ The shipped runtime provides:
 
 ## Architecture
 
-RatifyOS separates intelligence from execution. The conceptual layer, mapped to what actually exists in this repository:
+RetifyOS separates intelligence from execution. The conceptual layer, mapped to what actually exists in this repository:
 
 | Layer | Status | In this repository |
 |---|---|---|
 | **LLMs** | Implemented | Provider-neutral model routing over OpenAI-compatible endpoints, including local servers |
-| **RatifyOS Core** | Implemented | `src/agent/`, `src/app/`, `src/gateway/`, `src/kernel/` — orchestration, protocol, tool registry |
+| **RetifyOS Core** | Implemented | `src/agent/`, `src/app/`, `src/gateway/`, `src/kernel/` — orchestration, protocol, tool registry |
 | **Tools** | Implemented | `src/agent/tools/`, `src/mcp/`, `src/chains/solana/`, `src/perps/`, `src/pools/` |
 | **Memory** | Implemented | `src/cognition/` — durable memory, skills, sessions, FTS search, context compression |
 | **Workers** | Implemented | `src/autonomy/` — job queue, cron schedules, leases, event bus, delegation |
@@ -111,7 +111,7 @@ The dashed edge matters. The shipped signer process owns the encrypted keystore 
 
 ## Core Concepts
 
-**Intelligence vs. execution.** Reasoning is probabilistic; moving funds must not be. RatifyOS keeps the model outside the trusted computing base. The model may propose a typed `TradeIntent`; it never receives signing material, arbitrary instruction data, unrestricted RPC writes, or the ability to mutate policy or replay an authorization envelope.
+**Intelligence vs. execution.** Reasoning is probabilistic; moving funds must not be. RetifyOS keeps the model outside the trusted computing base. The model may propose a typed `TradeIntent`; it never receives signing material, arbitrary instruction data, unrestricted RPC writes, or the ability to mutate policy or replay an authorization envelope.
 
 **Agents.** An agent is a bounded loop over the shared model router and tool registry: iteration, token and cost budgets, cancellation, and parallel read-only tool execution. Durable runs persist their events so a client can resume a run over SSE. The loop is stateless with respect to trust — it holds no keypair and no broadcaster.
 
@@ -156,11 +156,11 @@ Implemented and exercised in this repository:
 
 ## Installation
 
-RatifyOS requires **Node.js 22 or newer**.
+RetifyOS requires **Node.js 22 or newer**.
 
 ```bash
-git clone https://github.com/RatifyOs/RatifyOS.git
-cd ratifyos
+git clone https://github.com/RetifyOS/RetifyOS.git
+cd RetifyOS
 npm ci
 npm run verify
 npm run build
@@ -175,7 +175,7 @@ npm run build
 Start with a private local data directory and an API token:
 
 ```bash
-export DATA_DIR="$HOME/.local/state/ratifyos"
+export DATA_DIR="$HOME/.local/state/RetifyOS"
 export NETWORK=testnet
 export EXECUTION_MODE=read-only
 export API_BEARER_TOKEN="replace-this-with-a-long-random-token"
@@ -196,7 +196,7 @@ export RPC_URL="https://your-devnet-rpc.example"
 
 The cluster is derived from `NETWORK`, never configured beside it: `mainnet` selects `mainnet-beta`, `testnet` selects `devnet` — the cluster operators actually rehearse on, since Solana's own testnet is a validator-release cluster. There is no separate cluster variable to fall out of step with the network, and no chain id.
 
-At startup RatifyOS calls `getGenesisHash` and compares it with the expected hash for that cluster. An endpoint that answers but reports a different cluster — a devnet URL left in a mainnet deployment — is reported unhealthy and the process never becomes ready. An unrecognised genesis hash is unhealthy too: unknown is not a pass.
+At startup RetifyOS calls `getGenesisHash` and compares it with the expected hash for that cluster. An endpoint that answers but reports a different cluster — a devnet URL left in a mainnet deployment — is reported unhealthy and the process never becomes ready. An unrecognised genesis hash is unhealthy too: unknown is not a pass.
 
 Mainnet cannot be selected accidentally. It requires both flags:
 
@@ -260,7 +260,7 @@ npm run cli -- tools
 npm run cli -- markets
 npm run cli -- jobs
 
-# Remote mode: talks to a running RatifyOS server
+# Remote mode: talks to a running RetifyOS server
 raos --remote http://127.0.0.1:8787 \
   --token "$API_BEARER_TOKEN" \
   sessions
@@ -277,7 +277,7 @@ Every command returns a stable JSON envelope:
 {"ok":true,"result":{}}
 ```
 
-If a dependency is missing, RatifyOS says so. It does not substitute plausible empty market data or synthetic simulation results.
+If a dependency is missing, RetifyOS says so. It does not substitute plausible empty market data or synthetic simulation results.
 
 Check the running process:
 
@@ -392,7 +392,7 @@ export RAOS_API_TOKEN="$API_BEARER_TOKEN"
 npm run telegram
 ```
 
-RatifyOS identifies Telegram actors by numeric user and chat IDs, never usernames. An empty allowlist permits nobody.
+RetifyOS identifies Telegram actors by numeric user and chat IDs, never usernames. An empty allowlist permits nobody.
 
 ---
 
@@ -416,7 +416,7 @@ Jobs use leases and fencing tokens. Events are ordered per consumer. Retries are
 
 ## The Security Boundary
 
-RatifyOS assumes model output, plugins, RPC responses, token metadata, quote providers, and chat input may be malicious.
+RetifyOS assumes model output, plugins, RPC responses, token metadata, quote providers, and chat input may be malicious.
 
 Controls are independent by design:
 
@@ -430,7 +430,7 @@ Controls are independent by design:
 - Audit events are append-only and can be anchored with Merkle roots.
 - Missing or unhealthy dependencies fail closed.
 
-### What RatifyOS does not claim
+### What RetifyOS does not claim
 
 - It is not a general-purpose wallet; the signer is a narrow policy-constrained execution boundary.
 - It does not make smart contracts safe.
@@ -497,7 +497,7 @@ Deeper references:
 
 ## Roadmap
 
-RatifyOS is honest about the line between what ships and what is only designed:
+RetifyOS is honest about the line between what ships and what is only designed:
 
 | Status | Scope |
 |---|---|
@@ -517,7 +517,7 @@ RatifyOS is honest about the line between what ships and what is only designed:
 
 ## License
 
-RatifyOS is open source under the [MIT License](LICENSE).
+RetifyOS is open source under the [MIT License](LICENSE).
 
 <div align="center">
 <sub>Built by <a href="https://github.com/venymlabs">Venym Labs</a></sub>

@@ -11,7 +11,7 @@
  *          SIMULATED so nobody mistakes it for a funded wallet.
  *
  * LIVE   — set `VITE_ARI_API` (e.g. `http://127.0.0.1:8787/api`) and the app
- *          talks to a real RatifyOS control plane through `./http-source.ts`. The
+ *          talks to a real RetifyOS control plane through `./http-source.ts`. The
  *          endpoint contract is documented at the top of that file.
  *
  * OTHER  — to bind directly to a different transport (a Tauri command bridge, a

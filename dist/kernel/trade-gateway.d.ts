@@ -25,7 +25,7 @@ export interface TradeGatewayDeps {
  * broadcast, and releases the reservation on every non-confirmed terminal state.
  * Non-throwing: failures come back as ExecuteResult.error.
  *
- * The wallet seam is a {@link WalletProvider}; RatifyOS satisfies it either with
+ * The wallet seam is a {@link WalletProvider}; RetifyOS satisfies it either with
  * the in-process keystore-backed wallet or with the isolated signer daemon, so
  * key custody stays outside this module either way.
  */

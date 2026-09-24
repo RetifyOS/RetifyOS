@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: the Aetheria
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: the Aetheria
  * `@aetheria/shared` package (enums, policy, intent, wallet, kernel, services,
  * events) is folded into this single contracts module.
  * SPDX-License-Identifier: Apache-2.0
@@ -257,7 +257,7 @@ export interface SignedTx {
 
 /**
  * The wallet seam. The DB never stores a key — only an opaque handle behind the
- * provider. RatifyOS ships two implementations of this port: the in-process
+ * provider. RetifyOS ships two implementations of this port: the in-process
  * {@link ../chains/solana/local-wallet.js LocalWallet} backed by the encrypted
  * keystore, and (owned separately) the isolated signer daemon, where `sign()`
  * crosses a process boundary and the key never enters this process at all.

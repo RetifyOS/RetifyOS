@@ -1,8 +1,8 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: Aetheria imported
- * `@modelcontextprotocol/sdk` statically, as a hard dependency. RatifyOS declares
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: Aetheria imported
+ * `@modelcontextprotocol/sdk` statically, as a hard dependency. RetifyOS declares
  * it an OPTIONAL PEER dependency and loads it lazily behind these structural
  * types, so it stays out of the lockfile and out of `npm audit --omit=dev`.
  * SPDX-License-Identifier: Apache-2.0
@@ -15,7 +15,7 @@
  * `src/pools/meteora/sdk-port.ts`. The SDK is a peer dependency marked optional
  * and is never imported statically, because:
  *
- *   · RatifyOS's production dependency set is deliberately small and sits under a
+ *   · RetifyOS's production dependency set is deliberately small and sits under a
  *     CI gate that runs `npm audit --omit=dev`. An IDE-integration transport is
  *     not something a headless trading daemon should be forced to install, let
  *     alone audit.
@@ -82,7 +82,7 @@ export class McpSdkMissingError extends Error {
   constructor(cause?: unknown) {
     super(
       `${MCP_SDK_PACKAGE} is not installed. Run "npm install ${MCP_SDK_PACKAGE}" ` +
-        "to expose RatifyOS's tools over MCP — it is an OPTIONAL peer dependency, " +
+        "to expose RetifyOS's tools over MCP — it is an OPTIONAL peer dependency, " +
         "deliberately kept out of the production install so it adds no audit " +
         "surface to a deployment that does not use it." +
         (cause

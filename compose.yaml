@@ -1,7 +1,7 @@
-name: ratifyos
+name: RetifyOS
 x-raos: &raos
   build: .
-  image: ratifyos:local
+  image: RetifyOS:local
   restart: unless-stopped
   init: true
   read_only: true

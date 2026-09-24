@@ -1,5 +1,5 @@
 [Unit]
-Description=RatifyOS Telegram gateway
+Description=RetifyOS Telegram gateway
 After=network-online.target raos-api.service
 Wants=network-online.target
 Requires=raos-api.service

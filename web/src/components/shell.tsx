@@ -33,7 +33,7 @@ export function Rail({ view, snap }: { readonly view: ViewId; readonly snap: Das
 
   return (
     <nav className="rail" aria-label="Console sections">
-      {/* The mark is the RatifyOS site's: A, an Instrument Serif italic acid R, I. */}
+      {/* The mark is the RetifyOS site's: A, an Instrument Serif italic acid R, I. */}
       <div className="rail-brand">
         <span className="wordmark">
           A<em>R</em>I

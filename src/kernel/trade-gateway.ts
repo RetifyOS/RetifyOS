@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS.
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS.
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -63,7 +63,7 @@ export interface TradeGatewayDeps {
  * broadcast, and releases the reservation on every non-confirmed terminal state.
  * Non-throwing: failures come back as ExecuteResult.error.
  *
- * The wallet seam is a {@link WalletProvider}; RatifyOS satisfies it either with
+ * The wallet seam is a {@link WalletProvider}; RetifyOS satisfies it either with
  * the in-process keystore-backed wallet or with the isolated signer daemon, so
  * key custody stays outside this module either way.
  */

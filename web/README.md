@@ -1,9 +1,9 @@
-# RatifyOS Control
+# RetifyOS Control
 
 The operator console (`@ari-os/web`). Vite + React 19, no component library, no CSS framework —
 the design system is hand-built in `src/styles/`.
 
-**This directory is its own npm package on purpose.** RatifyOS ships as a single
+**This directory is its own npm package on purpose.** RetifyOS ships as a single
 server package whose production dependencies are deliberately tiny and sit under
 a CI `npm audit --omit=dev` gate. React, Vite and the browser toolchain live
 here instead, are installed here, and are built and audited here. Nothing in
@@ -17,7 +17,7 @@ npm --prefix web run build       # → web/dist
 npm --prefix web run verify      # typecheck + build
 ```
 
-Port 5251, not 5250 — 5250 belongs to the sibling RatifyOS marketing site.
+Port 5251, not 5250 — 5250 belongs to the sibling RetifyOS marketing site.
 
 ## The data seam
 
@@ -78,7 +78,7 @@ numbers. Display helpers live in `src/lib/format.ts`.
 
 ## Design
 
-The RatifyOS design language, locked: obsidian `#050706`, bone `#eef1e9`, acid
+The RetifyOS design language, locked: obsidian `#050706`, bone `#eef1e9`, acid
 `#b6ff36`. Inter 500 at `-0.05em`, Instrument Serif italic as tension, IBM Plex
 Mono for all machine state. Oversized asymmetric editorial type against strict
 1px technical grids. Tokens live in `src/styles/tokens.css`.

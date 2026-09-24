@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: Aetheria's mcp
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: Aetheria's mcp
  * package had no tests. These are new, and are written to run with the OPTIONAL
  * `@modelcontextprotocol/sdk` peer dependency ABSENT — which is how CI runs,
  * since keeping it out of the lockfile is the point.

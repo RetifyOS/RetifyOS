@@ -179,7 +179,7 @@ export interface SignedTx {
 }
 /**
  * The wallet seam. The DB never stores a key — only an opaque handle behind the
- * provider. RatifyOS ships two implementations of this port: the in-process
+ * provider. RetifyOS ships two implementations of this port: the in-process
  * {@link ../chains/solana/local-wallet.js LocalWallet} backed by the encrypted
  * keystore, and (owned separately) the isolated signer daemon, where `sign()`
  * crosses a process boundary and the key never enters this process at all.

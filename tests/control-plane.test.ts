@@ -47,7 +47,7 @@ function fakeDashboard(): string {
   mkdirSync(join(root, "assets"));
   writeFileSync(
     join(root, "index.html"),
-    "<!doctype html><html><head><title>RatifyOS Control</title>" +
+    "<!doctype html><html><head><title>RetifyOS Control</title>" +
       '<script type="module" crossorigin src="/assets/index-CNfO7aI6.js"></script>' +
       '</head><body><div id="root"></div></body></html>',
   );

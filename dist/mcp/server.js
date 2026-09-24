@@ -1,17 +1,17 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: the tool set is
- * RatifyOS's `ToolRegistry` (which already owns validation, capability checks,
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: the tool set is
+ * RetifyOS's `ToolRegistry` (which already owns validation, capability checks,
  * timeouts and the audit trail) rather than Aetheria's `AnyTool[]`, so the
  * handler delegates to `registry.invoke()` instead of re-validating and calling
  * `tool.execute()` itself. Aetheria's hand-rolled zod→JSON-Schema shim is NOT
- * ported: RatifyOS already depends on `zod-to-json-schema`, and the registry's
+ * ported: RetifyOS already depends on `zod-to-json-schema`, and the registry's
  * `schemas()` emits the JSON Schema this advertises.
  * SPDX-License-Identifier: Apache-2.0
  */
 import { loadMcpModule, } from "./sdk.js";
-export const MCP_SERVER_NAME = "ratifyos";
+export const MCP_SERVER_NAME = "RetifyOS";
 /** The default sink. stderr, deliberately: stdout belongs to the protocol. */
 const stderrLog = (message) => {
     console.error(message);
@@ -62,7 +62,7 @@ export function mcpToolDescriptors(options) {
     });
 }
 /**
- * Build an MCP server that advertises RatifyOS's tool registry.
+ * Build an MCP server that advertises RetifyOS's tool registry.
  *
  * `tools/list` returns each eligible tool's name, description and JSON Schema;
  * `tools/call` hands the arguments to `registry.invoke()`, which validates the
@@ -81,7 +81,7 @@ export async function createMcpServer(options) {
     const server = sdk.createServer({ name: MCP_SERVER_NAME, version: options.version ?? "0.1.0" }, { capabilities: { tools: {} } });
     server.setRequestHandler(sdk.listToolsSchema, () => {
         const tools = mcpToolDescriptors(options);
-        log(`[ratifyos mcp] tools/list → ${tools.length} tool(s)`);
+        log(`[RetifyOS mcp] tools/list → ${tools.length} tool(s)`);
         return { tools };
     });
     server.setRequestHandler(sdk.callToolSchema, async (request) => {
@@ -91,14 +91,14 @@ export async function createMcpServer(options) {
         }
         // stderr. A `console.log` here would inject a line into the JSON-RPC
         // stream and desynchronise the client.
-        log(`[ratifyos mcp] tools/call ${name}`);
+        log(`[RetifyOS mcp] tools/call ${name}`);
         try {
             const result = await options.registry.invoke(name, request.params?.arguments ?? {}, { capabilities });
             return renderResult(result);
         }
         catch (e) {
             const message = e instanceof Error ? e.message : String(e);
-            log(`[ratifyos mcp] tools/call ${name} threw: ${message}`);
+            log(`[RetifyOS mcp] tools/call ${name} threw: ${message}`);
             return textResult(`'${name}' failed: ${message}`, true);
         }
     });

@@ -22,7 +22,7 @@ export interface UnsafeInProcessSigning {
  * inside `sign()` and zeroed immediately after. Transactions use base64 wire via
  * web3.js `VersionedTransaction`, round-tripping both legacy and v0.
  *
- * **This is not RatifyOS's custody model and must never be wired into a production
+ * **This is not RetifyOS's custody model and must never be wired into a production
  * execution path.** `sign()` signs whatever bytes it is handed: it does not
  * decode the transaction, re-check policy, or require an authorization envelope.
  * Substituting it for the isolated signer silently removes the entire custody

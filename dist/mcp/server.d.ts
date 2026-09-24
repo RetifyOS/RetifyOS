@@ -1,7 +1,7 @@
 import type { ToolRegistry } from "../agent/tools/registry.js";
 import type { Capability } from "../agent/types.js";
 import { type McpServer, type McpToolDescriptor } from "./sdk.js";
-export declare const MCP_SERVER_NAME = "ratifyos";
+export declare const MCP_SERVER_NAME = "RetifyOS";
 export interface McpServerOptions {
     readonly registry: ToolRegistry;
     /**
@@ -33,7 +33,7 @@ export interface McpServerOptions {
  */
 export declare function mcpToolDescriptors(options: Pick<McpServerOptions, "registry" | "capabilities" | "toolset">): McpToolDescriptor[];
 /**
- * Build an MCP server that advertises RatifyOS's tool registry.
+ * Build an MCP server that advertises RetifyOS's tool registry.
  *
  * `tools/list` returns each eligible tool's name, description and JSON Schema;
  * `tools/call` hands the arguments to `registry.invoke()`, which validates the

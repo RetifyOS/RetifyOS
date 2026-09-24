@@ -1,5 +1,5 @@
 /**
- * RatifyOS's tool registry, exposed over the Model Context Protocol via stdio.
+ * RetifyOS's tool registry, exposed over the Model Context Protocol via stdio.
  *
  * Two properties worth stating up front:
  *

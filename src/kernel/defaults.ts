@@ -1,9 +1,9 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: extracted from
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: extracted from
  * `packages/shared/src/schemas.ts`; the Aetheria env/Telegram config loader is
- * intentionally not ported (RatifyOS has its own in `src/config/`).
+ * intentionally not ported (RetifyOS has its own in `src/config/`).
  * SPDX-License-Identifier: Apache-2.0
  */
 

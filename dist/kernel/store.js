@@ -3,8 +3,8 @@
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
  * See NOTICE and licenses/APACHE-2.0.txt.
  *
- * Modified for RatifyOS: the storage driver is `node:sqlite`'s `DatabaseSync`
- * (the house primitive used by every other RatifyOS store) instead of
+ * Modified for RetifyOS: the storage driver is `node:sqlite`'s `DatabaseSync`
+ * (the house primitive used by every other RetifyOS store) instead of
  * better-sqlite3, and the reserve transaction is expressed with an explicit
  * BEGIN IMMEDIATE / COMMIT / ROLLBACK block rather than better-sqlite3's
  * `db.transaction()` helper. The schema, the cap semantics, and the

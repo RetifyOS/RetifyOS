@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: `node:test` +
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: `node:test` +
  * `node:assert/strict` replaced with vitest, and the PumpPortal cases are new
  * (Aetheria had none — its watcher was only exercised against the live socket).
  * SPDX-License-Identifier: Apache-2.0

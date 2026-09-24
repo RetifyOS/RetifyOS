@@ -2,9 +2,9 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: Aetheria's bin
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: Aetheria's bin
  * threw on every `tools/call` because it had no way to build a real tool
- * context; RatifyOS composes the same `Application` the daemon does, so calls are
+ * context; RetifyOS composes the same `Application` the daemon does, so calls are
  * live against whatever that composition actually mounts.
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -14,7 +14,7 @@ import { createApplication } from "../app/index.js";
 import { TRADING_CAPABILITIES } from "../agent/types.js";
 import { createMcpServer, runStdio } from "../mcp/index.js";
 /**
- * Stdio entry point: point an MCP client at this binary and it exposes RatifyOS's
+ * Stdio entry point: point an MCP client at this binary and it exposes RetifyOS's
  * read-side tools.
  *
  * **Read-only by default, and not by accident.** The granted capability set
@@ -46,9 +46,9 @@ export async function main() {
             capabilities: MCP_CAPABILITIES,
             version: process.env.npm_package_version ?? "0.1.0",
         });
-        console.error(`[ratifyos mcp] stdio transport ready — ${config.network}, read-only capabilities`);
+        console.error(`[RetifyOS mcp] stdio transport ready — ${config.network}, read-only capabilities`);
         await runStdio(server);
-        console.error("[ratifyos mcp] stdio transport closed.");
+        console.error("[RetifyOS mcp] stdio transport closed.");
         return 0;
     }
     finally {
@@ -57,6 +57,6 @@ export async function main() {
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href)
     main().catch((error) => {
-        console.error("[ratifyos mcp] fatal:", error instanceof Error ? error.message : error);
+        console.error("[RetifyOS mcp] fatal:", error instanceof Error ? error.message : error);
         process.exitCode = 1;
     });

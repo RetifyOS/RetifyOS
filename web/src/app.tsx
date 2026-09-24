@@ -38,7 +38,7 @@ export function App() {
 
   useEffect(() => {
     const label = VIEWS.find((v) => v.id === view)?.label ?? 'Control';
-    document.title = `${label} · RatifyOS Control`;
+    document.title = `${label} · RetifyOS Control`;
   }, [view]);
 
   const closeIntro = (): void => {

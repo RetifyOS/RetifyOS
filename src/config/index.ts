@@ -22,7 +22,7 @@ export const CLUSTER_FOR_NETWORK = {
 export type Cluster =
   (typeof CLUSTER_FOR_NETWORK)[keyof typeof CLUSTER_FOR_NETWORK];
 
-/** What RatifyOS needs to know about one OpenAI-compatible LLM endpoint. */
+/** What RetifyOS needs to know about one OpenAI-compatible LLM endpoint. */
 export interface LlmProviderProfile {
   /** Default OpenAI-compatible base URL. `LLM_BASE_URL` overrides it. */
   readonly baseUrl: string;

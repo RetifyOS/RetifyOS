@@ -1,6 +1,6 @@
-# RatifyOS — Solana unification
+# RetifyOS — Solana unification
 
-**Decided 2026-08-21.** RatifyOS becomes a Solana-only autonomous trading agent OS.
+**Decided 2026-08-21.** RetifyOS becomes a Solana-only autonomous trading agent OS.
 The Robinhood Chain / EVM path is retired. `venymlabs/aetheria` is absorbed and
 archived. One codebase, one kernel, one story.
 
@@ -11,7 +11,7 @@ from 2026-07-12 and no longer describes reality.
 
 Two codebases independently implemented the same idea against different chains:
 
-| Concern | RatifyOS | Aetheria |
+| Concern | RetifyOS | Aetheria |
 |---|---|---|
 | Chokepoint | `execution/gateway.ts` + authorization envelopes | `kernel/trade-gateway.ts` |
 | Policy | `execution/control` | `kernel/policy-engine.ts` |
@@ -19,7 +19,7 @@ Two codebases independently implemented the same idea against different chains:
 | Custody | isolated signer daemon, **separate process** | in-process vault (scrypt→AES-256-GCM) |
 | Spend caps | native-unit reservations | **input-leg denominated** |
 
-Neither dominates. The merged kernel keeps **RatifyOS's process architecture** and
+Neither dominates. The merged kernel keeps **RetifyOS's process architecture** and
 adopts **Aetheria's input-leg cap semantics**.
 
 The input-leg rule is the one non-obvious decision worth stating plainly: caps are
@@ -82,13 +82,13 @@ subdirectories:
 - `src/pools/` — Meteora DLMM (bin-step semantics, position ranges, distribution
   strategies) + rebalancer (drift threshold, min interval, daily cap, IL-vs-fees
   accounting) + pump.fun bonding curve, delegating post-migration tokens to Jupiter.
-- `web/` — dashboard in the RatifyOS design language (obsidian `#050706`, bone
+- `web/` — dashboard in the RetifyOS design language (obsidian `#050706`, bone
   `#eef1e9`, acid `#b6ff36`; Inter 500 `-0.05em`, Instrument Serif italic, IBM Plex
   Mono for machine state). Approvals queue is the centrepiece.
 
 ## Structure
 
-RatifyOS stays a **single npm package**. It already organises by `src/execution`,
+RetifyOS stays a **single npm package**. It already organises by `src/execution`,
 `src/signer`, `src/market`, `src/risk` — Solana lands as `src/chains/solana/` and
 the new work as `src/perps/`, `src/pools/`. Converting to pnpm+turbo would be churn
 without benefit.
@@ -99,7 +99,7 @@ without benefit.
   Docs strings (`TRADING.md`, README command lists) are also test-asserted. This
   refactor changes both; the assertions must be updated deliberately, never
   reformatted casually.
-- **Licence.** RatifyOS is MIT, Aetheria is Apache-2.0. Apache code may be included
+- **Licence.** RetifyOS is MIT, Aetheria is Apache-2.0. Apache code may be included
   under MIT but carries attribution and patent-grant terms — the merged repo needs
   a NOTICE and `THIRD_PARTY_NOTICES.md` entries. Cannot be done silently.
 - **Dependency budget.** Production deps are currently four libraries (`fastify`,

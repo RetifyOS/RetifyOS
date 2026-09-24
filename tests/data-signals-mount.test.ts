@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: MIT
- * NEW in RatifyOS — not derived from Aetheria. Aetheria's signals engine and its
- * pools guards never met: the `RugHeatSource` port is an RatifyOS extraction, and
+ * NEW in RetifyOS — not derived from Aetheria. Aetheria's signals engine and its
+ * pools guards never met: the `RugHeatSource` port is an RetifyOS extraction, and
  * these are the cases that prove the port is actually satisfied end to end.
  */
 

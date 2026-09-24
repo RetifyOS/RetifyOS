@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: MIT
  *
- * Pins `src/chains/solana/spl.ts` — our replacement for the four things RatifyOS
+ * Pins `src/chains/solana/spl.ts` — our replacement for the four things RetifyOS
  * used from `@solana/spl-token` before that package was dropped over the
  * unpatched `bigint-buffer` advisory.
  *

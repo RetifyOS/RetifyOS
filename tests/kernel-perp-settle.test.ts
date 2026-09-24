@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. New in RatifyOS: covers the
+ * See NOTICE and licenses/APACHE-2.0.txt. New in RetifyOS: covers the
  * venue-position settle branch the Aetheria perps package could only document.
  * SPDX-License-Identifier: Apache-2.0
  */

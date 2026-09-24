@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. New in RatifyOS: the Aetheria package
+ * See NOTICE and licenses/APACHE-2.0.txt. New in RetifyOS: the Aetheria package
  * could not edit the kernel, so it documented the venue-position settle it
  * needed rather than implementing one. This is that implementation.
  * SPDX-License-Identifier: Apache-2.0

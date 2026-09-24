@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: the transport is
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: the transport is
  * loaded lazily (the SDK is an optional peer dependency here) instead of
  * imported statically.
  * SPDX-License-Identifier: Apache-2.0

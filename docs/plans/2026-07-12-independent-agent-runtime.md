@@ -1,4 +1,4 @@
-# Independent RatifyOS Implementation Plan
+# Independent RetifyOS Implementation Plan
 
 > **For Hermes:** Execute with strict TDD and independent review gates.
 

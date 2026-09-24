@@ -1,5 +1,5 @@
 [Unit]
-Description=RatifyOS schema migration
+Description=RetifyOS schema migration
 Before=raos-api.service
 
 [Service]

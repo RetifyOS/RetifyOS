@@ -1,5 +1,5 @@
 /**
- * src/perps — venue-agnostic perpetuals for RatifyOS.
+ * src/perps — venue-agnostic perpetuals for RetifyOS.
  *
  * The architectural invariant is unchanged and non-negotiable: THE MODEL CANNOT
  * MOVE MONEY. Perps tools build a structured `PerpIntent` and return it. Nothing

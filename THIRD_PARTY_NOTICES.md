@@ -1,6 +1,6 @@
 # Third-Party Notices and Provenance
 
-RatifyOS is MIT licensed. Production dependencies are independently licensed:
+RetifyOS is MIT licensed. Production dependencies are independently licensed:
 
 | Package | License | Purpose |
 |---|---|---|
@@ -14,7 +14,7 @@ The authoritative inventory is `package-lock.json`; verify before each release w
 
 ### Removed: `@solana/spl-token`
 
-RatifyOS used exactly four things from `@solana/spl-token` — the `TOKEN_PROGRAM_ID`,
+RetifyOS used exactly four things from `@solana/spl-token` — the `TOKEN_PROGRAM_ID`,
 `TOKEN_2022_PROGRAM_ID` and `ASSOCIATED_TOKEN_PROGRAM_ID` addresses, and
 `createAssociatedTokenAccountIdempotentInstruction`. The package reaches
 `bigint-buffer` through `@solana/buffer-layout-utils`, and `bigint-buffer` carries an

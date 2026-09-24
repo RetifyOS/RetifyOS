@@ -1,9 +1,9 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: NEW in this
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: NEW in this
  * repo. Aetheria's strategy runner called an engine-level `swap()` that owned
- * quoting and execution; RatifyOS has no such engine, so this is the adapter that
+ * quoting and execution; RetifyOS has no such engine, so this is the adapter that
  * turns a scheduled {@link StrategySwap} into a kernel `TradeIntent` and hands
  * it to `TradeGateway.execute()` — the same chokepoint every tool uses.
  * SPDX-License-Identifier: Apache-2.0

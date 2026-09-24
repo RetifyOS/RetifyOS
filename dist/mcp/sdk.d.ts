@@ -5,7 +5,7 @@
  * `src/pools/meteora/sdk-port.ts`. The SDK is a peer dependency marked optional
  * and is never imported statically, because:
  *
- *   · RatifyOS's production dependency set is deliberately small and sits under a
+ *   · RetifyOS's production dependency set is deliberately small and sits under a
  *     CI gate that runs `npm audit --omit=dev`. An IDE-integration transport is
  *     not something a headless trading daemon should be forced to install, let
  *     alone audit.

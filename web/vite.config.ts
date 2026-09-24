@@ -1,7 +1,7 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
-// 5250 belongs to the sibling RatifyOS marketing site; the console sits on 5251.
+// 5250 belongs to the sibling RetifyOS marketing site; the console sits on 5251.
 const PORT = 5251;
 
 export default defineConfig({

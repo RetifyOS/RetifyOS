@@ -1,5 +1,5 @@
-RatifyOS
-Copyright 2026 RatifyOS contributors
+RetifyOS
+Copyright 2026 RetifyOS contributors
 
 This product is distributed under the MIT License (see LICENSE).
 
@@ -31,7 +31,7 @@ The Apache License grants a patent licence in addition to the copyright
 licence, and it terminates for any party that initiates patent litigation
 alleging that the Work infringes a patent (Apache-2.0 §3). Those terms
 continue to govern the files listed below and are not superseded by the MIT
-licence covering the rest of RatifyOS. The attribution and NOTICE requirements
+licence covering the rest of RetifyOS. The attribution and NOTICE requirements
 of Apache-2.0 §4 are satisfied by this file plus the per-file headers.
 
 Files derived from Aetheria
@@ -68,7 +68,7 @@ Files derived from Aetheria
   src/data/pumpportal.ts            from packages/data/src/pumpportal.ts
   src/data/signals-engine.ts        from packages/data/src/signals-engine.ts
   src/data/tape.ts                  from packages/data/src/tape.ts
-  src/data/feed.ts                  NEW in RatifyOS — see below
+  src/data/feed.ts                  NEW in RetifyOS — see below
 
   src/mcp/index.ts                  from packages/mcp/src/index.ts
   src/mcp/sdk.ts                    from packages/mcp/src/server.ts (its SDK
@@ -80,8 +80,8 @@ Files derived from Aetheria
   src/strategy/index.ts             from packages/strategy/src/index.ts
   src/strategy/runner.ts            from packages/strategy/src/runner.ts
   src/strategy/store.ts             from packages/strategy/src/store.ts
-  src/strategy/executor.ts          NEW in RatifyOS — see below
-  src/strategy/view.ts              NEW in RatifyOS — see below
+  src/strategy/executor.ts          NEW in RetifyOS — see below
+  src/strategy/view.ts              NEW in RetifyOS — see below
 
   Two Aetheria packages were assessed and deliberately NOT ported:
 
@@ -91,13 +91,13 @@ Files derived from Aetheria
   simpler per-user turn/fact table would have added a second, weaker memory
   system rather than a capability.
 
-  `packages/channel-telegram/` — `src/telegram/runner.ts` is RatifyOS's own
+  `packages/channel-telegram/` — `src/telegram/runner.ts` is RetifyOS's own
   chain-agnostic long-poll runner over `src/gateway/channels/`. Adopting the
   grammY bot would have added a production dependency and a second Telegram
   implementation to reach the same API.
 
   `packages/mcp/src/json-schema.ts` was likewise not ported: it is a
-  hand-rolled zod→JSON-Schema shim, and RatifyOS already depends on
+  hand-rolled zod→JSON-Schema shim, and RetifyOS already depends on
   `zod-to-json-schema`, whose output `ToolRegistry.schemas()` emits.
 
   The local-LLM provider support — `LLM_PROVIDERS` and `LlmConfig` in
@@ -106,13 +106,13 @@ Files derived from Aetheria
   Aetheria and is not covered by Apache-2.0. Aetheria's equivalent
   (`packages/gateway/src/gateway.ts`, `packages/shared/src/config.ts`) is a
   base-URL string map plus a four-line `providerExtraBody` switch over its own
-  `LlmConfig`/`LlmGateway` contracts, none of which RatifyOS carried over. What
+  `LlmConfig`/`LlmGateway` contracts, none of which RetifyOS carried over. What
   was taken across is a fact about a third party's HTTP API —
   `chat_template_kwargs.enable_thinking` on a llama.cpp-backed server — and the
   idea of keying request-body extras off the provider name. The implementation
-  here is a validated provider table feeding RatifyOS's own strict-zod
+  here is a validated provider table feeding RetifyOS's own strict-zod
   `AppConfig`, `ModelCandidate` and `ModelRouter`, and is MIT like the rest of
-  RatifyOS. tests/llm-provider.test.ts is likewise new and MIT.
+  RetifyOS. tests/llm-provider.test.ts is likewise new and MIT.
 
   Aetheria's uncommitted agent-loop work (`packages/agent/src/loop.ts`) was
   assessed and deliberately NOT ported. Its context compaction — keep the last
@@ -130,7 +130,7 @@ Files derived from Aetheria
   rather than in the loop.
 
   src/chains/solana/spl.ts is NOT derived from Aetheria and is not covered by
-  Apache-2.0. It is a clean-room MIT file written for RatifyOS to replace the
+  Apache-2.0. It is a clean-room MIT file written for RetifyOS to replace the
   `@solana/spl-token` dependency: three public on-chain program addresses and
   one instruction built from the Associated Token Account program's documented
   wire format. See THIRD_PARTY_NOTICES.md. tests/solana-spl.test.ts is likewise
@@ -140,7 +140,7 @@ Files derived from Aetheria
   named file under packages/perps/src/ and packages/pools/src/ respectively,
   with these exceptions:
 
-  src/perps/settle.ts               NEW in RatifyOS — see below
+  src/perps/settle.ts               NEW in RetifyOS — see below
   src/pools/signals.ts              from packages/data/src/signals-engine.ts
                                          (the RugHeat reading and its source
                                          port only, not the engine)
@@ -174,12 +174,12 @@ Tests derived from Aetheria
   tests/strategy-runner.test.ts     from packages/strategy/src/runner.test.ts
                                          (the TradeGateway chokepoint cases are
                                          new)
-  tests/mcp-server.test.ts          NEW in RatifyOS — Aetheria's mcp package had
+  tests/mcp-server.test.ts          NEW in RetifyOS — Aetheria's mcp package had
                                          no tests; these run with the optional
                                          SDK absent
-  tests/kernel-perp-settle.test.ts  NEW in RatifyOS — covers the venue-position
+  tests/kernel-perp-settle.test.ts  NEW in RetifyOS — covers the venue-position
                                          settle branch
-  tests/data-signals-mount.test.ts  NEW in RatifyOS and MIT — proves the
+  tests/data-signals-mount.test.ts  NEW in RetifyOS and MIT — proves the
                                          `RugHeatSource` port is satisfied and
                                          that mounting an engine is not a
                                          relaxation
@@ -188,9 +188,9 @@ Modifications made (Apache-2.0 §4(b))
 ─────────────────────────────────────
 
   * `@aetheria/*` package specifiers replaced with relative ESM imports; the
-    pnpm workspace layout is flattened into RatifyOS's single-package `src/`.
+    pnpm workspace layout is flattened into RetifyOS's single-package `src/`.
   * `src/kernel/store.ts` — the SQLite driver is `node:sqlite`'s `DatabaseSync`
-    (RatifyOS's house primitive) instead of better-sqlite3, and the reserve
+    (RetifyOS's house primitive) instead of better-sqlite3, and the reserve
     transaction is an explicit BEGIN IMMEDIATE / COMMIT / ROLLBACK block
     instead of better-sqlite3's `db.transaction()` helper. Schema, cap
     semantics and the single-writer guarantee are unchanged.
@@ -198,10 +198,10 @@ Modifications made (Apache-2.0 §4(b))
     printing, so the invariants run both as a script and under vitest.
   * `src/kernel/contracts.ts` — the Aetheria `shared` package is consolidated
     into one module; the LLM, tool-registry, Telegram-runtime, env-config and
-    market-data contracts are deliberately not carried over (RatifyOS has its
+    market-data contracts are deliberately not carried over (RetifyOS has its
     own). Doc comments referring to Aetheria-specific commands are reworded.
   * `src/kernel/lock.ts`, `src/kernel/policy-engine.ts` — user-facing error text
-    rebranded from Aetheria to RatifyOS; behaviour unchanged.
+    rebranded from Aetheria to RetifyOS; behaviour unchanged.
   * `src/chains/solana/rpc.ts` — the constructor also accepts an existing
     `Connection` so the read ports can be exercised without a live RPC.
   * `src/kernel/contracts.ts` — `IntentKind` widened from the literal `'swap'`
@@ -210,7 +210,7 @@ Modifications made (Apache-2.0 §4(b))
     added. The Aetheria `shared` tool contract (`ToolContext`, `Preview`,
     `ToolDefinition`) IS now carried over after all, since `src/perps` and
     `src/pools` are written against it — renamed to `IntentToolDefinition` /
-    `ToolOutcome` so it does not collide with RatifyOS's own registry contract in
+    `ToolOutcome` so it does not collide with RetifyOS's own registry contract in
     `src/agent/types.ts`.
   * `src/kernel/policy-engine.ts` — the "input amount must be positive" rule is
     gated on the intent kind so a perp reduce/close (which posts no collateral)
@@ -227,7 +227,7 @@ Modifications made (Apache-2.0 §4(b))
     `curve_buy`, …) instead of flattening to `'swap'`.
   * `src/perps/*`, `src/pools/*` — `node:test` replaced with vitest in the
     ported tests, which moved from co-located `*.test.ts` into `tests/`;
-    optional interface properties widened to `?: T | undefined` where RatifyOS's
+    optional interface properties widened to `?: T | undefined` where RetifyOS's
     `exactOptionalPropertyTypes` requires it; three latent unused-binding lint
     errors fixed.
   * `@drift-labs/sdk`, `@meteora-ag/dlmm` and `@modelcontextprotocol/sdk` are
@@ -243,11 +243,11 @@ Modifications made (Apache-2.0 §4(b))
     size does not parse as a finite non-negative number is dropped rather than
     admitted as `NaN`.
   * `src/data/signals-engine.ts` — the `RugHeat` interface is imported from
-    `src/pools/signals.ts` (where RatifyOS extracted it) rather than redeclared,
+    `src/pools/signals.ts` (where RetifyOS extracted it) rather than redeclared,
     and the class states `implements RugHeatSource`, so satisfying the port the
     pools guards read is checked by the compiler. Scoring is unchanged.
   * `src/data/feed.ts` — NEW. Aetheria wired tape + watcher + engine inside its
-    engine package, which RatifyOS does not have. `SignalsFeed` is that wiring
+    engine package, which RetifyOS does not have. `SignalsFeed` is that wiring
     with a lifecycle the composition root owns: the engine exists from
     construction (so `guardRugHeat` always has a source) while `start()` — the
     network side effect — belongs to `Application.start()`. Auto-following new
@@ -260,29 +260,29 @@ Modifications made (Apache-2.0 §4(b))
     rather than throwing inside the tick loop; `all()` was added for the
     console, which shows every strategy rather than one user's.
   * `src/strategy/runner.ts` — Aetheria's `SwapRequest` came from its `shared`
-    runtime contract, which RatifyOS deliberately did not carry over, so the
+    runtime contract, which RetifyOS deliberately did not carry over, so the
     request shape is declared locally as `StrategySwap`; the tick timer is
     `unref`'d. The planning logic, the error breaker and the reschedule
     arithmetic are unchanged.
   * `src/strategy/executor.ts` — NEW, and the reason the port is honest.
     Aetheria's runner called an engine-level `swap()` that owned quoting and
-    execution. RatifyOS has no such engine, so `gatewayExecutor` quotes through
+    execution. RetifyOS has no such engine, so `gatewayExecutor` quotes through
     `JupiterClient`, assembles a plain `TradeIntent` and hands it to
     `TradeGateway.execute()` — the same chokepoint every tool uses. It holds no
     keypair, no broadcaster and no RPC write. `confirmedByUser` is never set:
     an unattended schedule cannot assert that a human confirmed a trade, so an
     unpinned mint is refused by `MINT_NOT_PINNED` rather than waved through.
   * `src/strategy/view.ts` — NEW. Aetheria surfaced strategies as Telegram
-    text; RatifyOS has a console, so this projects a row onto its `StrategyView`,
+    text; RetifyOS has a console, so this projects a row onto its `StrategyView`,
     following `src/control/snapshot.ts`'s rule of never inventing a number (no
     trigger without a real price reading, no budget meter without a budget).
-  * `src/mcp/server.ts` — the tool set is RatifyOS's `ToolRegistry` rather than
+  * `src/mcp/server.ts` — the tool set is RetifyOS's `ToolRegistry` rather than
     Aetheria's `AnyTool[]`, so the handler delegates to `registry.invoke()`
     (which already owns validation, capability checks, timeouts and the audit
     event) instead of re-validating and calling `tool.execute()` itself. The
     granted capability set comes from the composition root and cannot be
     widened by a request; a tool outside it is not listed at all.
   * `src/bin/mcp.ts` — Aetheria's bin threw on every `tools/call` because it
-    had no way to build a tool context. RatifyOS composes the same `Application`
+    had no way to build a tool context. RetifyOS composes the same `Application`
     the daemon does, mounts no custody, and grants read-only capabilities.
-  * Source formatting normalised to RatifyOS's Prettier configuration.
+  * Source formatting normalised to RetifyOS's Prettier configuration.

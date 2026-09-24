@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: the SQLite
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: the SQLite
  * driver is `node:sqlite`'s `DatabaseSync` (the house primitive) instead of
  * better-sqlite3, `PRAGMA journal_mode` moves into `exec`, and `.changes` is
  * coerced through `Number()` because `node:sqlite` returns it as a bigint.

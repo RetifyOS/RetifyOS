@@ -1,8 +1,8 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: Aetheria's
- * `SwapRequest` came from its `shared` runtime contract, which RatifyOS
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: Aetheria's
+ * `SwapRequest` came from its `shared` runtime contract, which RetifyOS
  * deliberately did not carry over, so the request shape is declared here as
  * {@link StrategySwap}; the executor port is narrowed to the one method the
  * runner needs; and the tick timer is unref'd so a runner never holds the

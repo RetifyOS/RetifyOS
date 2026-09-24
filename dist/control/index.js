@@ -154,7 +154,7 @@ export function registerControlPlane(app, options) {
         // "Refuse by default and say so loudly." Every control-plane route answers
         // 401 until a credential exists; this is the only place it can be said out
         // loud to whoever started the process.
-        console.warn("[ratifyos] control plane mounted WITHOUT a credential: set API_BEARER_TOKEN or API_BEARER_TOKEN_SHA256. Every /api route — including approvals — will refuse with 401 AUTH_NOT_CONFIGURED.");
+        console.warn("[RetifyOS] control plane mounted WITHOUT a credential: set API_BEARER_TOKEN or API_BEARER_TOKEN_SHA256. Every /api route — including approvals — will refuse with 401 AUTH_NOT_CONFIGURED.");
     }
     // ── security headers on every response this daemon emits ──────────────────
     app.addHook("onRequest", async (req, reply) => {
@@ -415,7 +415,7 @@ export function registerControlPlane(app, options) {
                 .code(503)
                 .type("text/plain; charset=utf-8")
                 .header("cache-control", "no-store")
-                .send("RatifyOS control dashboard is not built.\n\nRun `npm run dashboard:build` (or set ARI_DASHBOARD_DIR) and restart.\nThe API at /api is unaffected.\n");
+                .send("RetifyOS control dashboard is not built.\n\nRun `npm run dashboard:build` (or set ARI_DASHBOARD_DIR) and restart.\nThe API at /api is unaffected.\n");
         // The bundle has no sign-in screen and cannot grow one from here, so an
         // unauthenticated navigation is sent to the one that exists rather than to
         // a console that would render empty panels and 401s with no way out. No

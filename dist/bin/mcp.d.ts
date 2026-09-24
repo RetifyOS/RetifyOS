@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import type { Capability } from "../agent/types.js";
 /**
- * Stdio entry point: point an MCP client at this binary and it exposes RatifyOS's
+ * Stdio entry point: point an MCP client at this binary and it exposes RetifyOS's
  * read-side tools.
  *
  * **Read-only by default, and not by accident.** The granted capability set

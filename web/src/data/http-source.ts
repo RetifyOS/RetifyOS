@@ -1,5 +1,5 @@
 /**
- * The live adapter. Talks to an RatifyOS control plane over plain HTTP + SSE.
+ * The live adapter. Talks to an RetifyOS control plane over plain HTTP + SSE.
  *
  * NOTHING in the UI changes when this replaces the fixture source — that is the
  * point of `DashboardSource`. The endpoints below are the contract this app

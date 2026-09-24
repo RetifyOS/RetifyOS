@@ -65,7 +65,7 @@ export function Intro({ onClose }: { readonly onClose: () => void }) {
     <div className="intro" role="dialog" aria-modal="true" aria-label="What is this?">
       <div className="intro-sheet">
         <div className="intro-top">
-          <span className="mono">ratifyos / control · orientation sheet · 01 of 01</span>
+          <span className="mono">RetifyOS / control · orientation sheet · 01 of 01</span>
           <button type="button" className="intro-close" onClick={onClose} aria-label="Close">
             <IconClose size={13} />
           </button>

@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: the `ws` package
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: the `ws` package
  * is replaced by Node's built-in global `WebSocket` (the WHATWG API, stable
  * since Node 22), so the keyless feed adds no production dependency and no
  * audit surface. That swap costs the `terminate()` / `removeAllListeners()`
@@ -32,7 +32,7 @@ function defaultSocketFactory(url) {
     const ctor = globalThis
         .WebSocket;
     if (!ctor) {
-        throw new Error("no global WebSocket: RatifyOS requires Node >= 22, where the WHATWG " +
+        throw new Error("no global WebSocket: RetifyOS requires Node >= 22, where the WHATWG " +
             "WebSocket is built in. The PumpPortal feed deliberately adds no " +
             "websocket dependency.");
     }

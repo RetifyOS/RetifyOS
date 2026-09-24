@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS: the `RugHeat`
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS: the `RugHeat`
  * reading is imported from `src/pools/signals.ts` (where it was extracted to)
  * and the class declares `implements RugHeatSource`, so satisfying the port the
  * pools guards depend on is checked by the compiler rather than by eye.

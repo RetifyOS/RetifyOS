@@ -45,7 +45,7 @@ export function createServer(o: ServerOptions): FastifyInstance {
   }));
   app.get("/openapi.json", async () => ({
     openapi: "3.1.0",
-    info: { title: "RatifyOS", version },
+    info: { title: "RetifyOS", version },
     paths: {},
   }));
   app.get("/v1/health", async () => ({

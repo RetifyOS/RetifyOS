@@ -1,7 +1,7 @@
 /*
  * Portions of this file are derived from Aetheria (https://github.com/venymlabs/aetheria),
  * Copyright Venym Labs, licensed under the Apache License, Version 2.0.
- * See NOTICE and licenses/APACHE-2.0.txt. Modified for RatifyOS.
+ * See NOTICE and licenses/APACHE-2.0.txt. Modified for RetifyOS.
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -61,7 +61,7 @@ function assertInProcessSigningAllowed(opts: UnsafeInProcessSigning): void {
  * inside `sign()` and zeroed immediately after. Transactions use base64 wire via
  * web3.js `VersionedTransaction`, round-tripping both legacy and v0.
  *
- * **This is not RatifyOS's custody model and must never be wired into a production
+ * **This is not RetifyOS's custody model and must never be wired into a production
  * execution path.** `sign()` signs whatever bytes it is handed: it does not
  * decode the transaction, re-check policy, or require an authorization envelope.
  * Substituting it for the isolated signer silently removes the entire custody

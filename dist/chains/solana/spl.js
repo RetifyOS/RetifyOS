@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: MIT
  *
- * Clean-room reimplementation of the four things RatifyOS used from
+ * Clean-room reimplementation of the four things RetifyOS used from
  * `@solana/spl-token`. No upstream source is incorporated here: the program ids
  * are public on-chain addresses, and the instruction is built from the
  * Associated Token Account program's documented wire format.
